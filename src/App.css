@@ -1,0 +1,17 @@
+.error-message{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+
+}
+.error-message a{
+    color: var(--btn-bg-clr);
+    font-size: 1rem;
+    font-weight: 400;
+
+    border: 2px solid var(--btn-bg-clr);
+}

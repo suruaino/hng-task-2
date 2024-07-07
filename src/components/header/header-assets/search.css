@@ -1,0 +1,20 @@
+
+.search-bar{
+    width: 20rem;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+   
+    border: 2px solid var(--border-clr-1);
+    border-radius: 10px;
+}
+.search-bar input{
+    background-color: transparent;
+    padding-inline: 1rem;
+}
+.search-bar button{
+    background-color: var(--border-clr-1);
+    color: var(--txt-clr-1);
+    border-radius: 5px;
+    padding-inline: 1rem;
+}
