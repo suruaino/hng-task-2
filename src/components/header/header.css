@@ -17,6 +17,9 @@ header{
 
     border: 1px solid var(--btn-bg-clr)
 }
+.logo img{
+    height: 3.5rem;
+}
 .top .menuBtn{
     cursor: pointer;
 }
@@ -39,7 +42,7 @@ header{
 }
 .top nav ul li:hover{
     color: var(--txt-clr-3);
-    border: 2px solid var(--btn-bg-clr);
+    /* border: 2px solid var(--btn-bg-clr); */
 }
 
 
@@ -51,13 +54,13 @@ header{
     border-radius: 10px;
     cursor: pointer;
 }
-.top nav ul li:last-child:hover{
+/* .top nav ul li:last-child:hover{
     color: var(--txt-clr-1);
     border: 2px solid var(--bg-clr-1);
-}
+} */
 .bottom{
     width: 100%;
-    max-width: 85%;
+    max-width: 93%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -103,6 +106,21 @@ header{
     width: 1.2rem;
 }
 
+.cart-content{
+    background-color: var(--bg-clr-1);
+    width: 14rem;
+    min-height: 8rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: 2px solid red;
+    border-radius: 10px;
+    top: 2.7rem;
+    right: 0;
+}
+.test-cart{
+    border: 4px solid red;
+}
 
 @media (max-width: 485px) {
     .bottom .right{
@@ -113,6 +131,9 @@ header{
 }
 
 @media (max-width: 768px) {
+    .logo img{
+        height: 2.5rem;
+    }
     .top nav{
         background-color: hsl(from var(--footer-bg-clr) h s 10% / .98);
         color: var(--txt-clr-1);
@@ -152,7 +173,13 @@ header{
         /* border-radius: 10px; */
         transition: .3s;
     }
-  
+    .top nav ul li:last-child:hover{
+        color: var(--txt-clr-1);
+        border: 2px solid var(--bg-clr-1);
+    }
+    .bottom{
+        max-width: 92%;
+    }
     .bottom .right{
         gap: 1rem;
     }

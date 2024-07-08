@@ -69,3 +69,17 @@
     font-weight: 500;
     border-radius: 10px;
 }
+
+.cart-items{
+    background-color: var(--bg-clr-1);
+    font-weight: 100%;
+    width: 20rem;
+    /* max-width: 60%; */
+    height: 25rem;
+    padding-inline: 5%;
+
+    border: 2px solid red;
+    border-radius: 10px;
+    position: absolute;
+    right: 4%;
+}
