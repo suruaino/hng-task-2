@@ -1,5 +1,6 @@
 .footer{
     background-color: var(--footer-bg-clr);
+    color: var(--txt-clr-1);
     width: 100%;
     display: flex;
     justify-content: center;

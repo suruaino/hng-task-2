@@ -10,11 +10,30 @@
 }
 .search-bar input{
     background-color: transparent;
+    width: 100%;
     padding-inline: 1rem;
 }
 .search-bar button{
+    width: 4rem;
     background-color: var(--border-clr-1);
     color: var(--txt-clr-1);
     border-radius: 5px;
-    padding-inline: 1rem;
+    display: grid;
+    place-items: center;
+}
+.search-bar button img{
+    width: 1.5rem;
+}
+@media (max-width: 485px) {
+    .search-bar{
+        width: 12rem;
+    }
+    .search-bar input{
+        width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .search-bar{
+        width: 16rem;
+    }
 }

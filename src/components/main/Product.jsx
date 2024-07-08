@@ -1,6 +1,9 @@
 import React from 'react';
 
 const Product = ({ product, addToCart }) => {
+
+
+
     return (
         <div className="product">
             <div className='content'>
@@ -12,6 +15,7 @@ const Product = ({ product, addToCart }) => {
                 <p className='product__price'>#{product.price}</p>
             </div>
             <button onClick={() => addToCart(product)}>Add to Cart</button>
+
         </div>
     );
 };

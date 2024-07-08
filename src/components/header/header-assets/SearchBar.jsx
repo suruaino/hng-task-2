@@ -1,4 +1,4 @@
-
+import searchIcon from "./search-icon.svg";
 import "./search.css";
 const SearchBar = () => {
 
@@ -6,8 +6,7 @@ const SearchBar = () => {
         <div className="search-bar">
             <input type="search" placeholder="Search Books, Authors, Cathegories" />
             <button>
-                <img src="" alt="" />
-                Button
+                <img src={searchIcon} alt="" />
             </button>
         </div>
     )

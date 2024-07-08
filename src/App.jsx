@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from "react";
 import { Route, Routes, Link, Navigate } from "react-router-dom";
 import Layer from "./components/layout/Layout";
 import Home from "./components/main/Home";
@@ -6,19 +7,6 @@ import Cart from "./components/main/Cart";
 import Checkout from "./components/main/Checkout";
 import ProductList from "./components/main/ProductList";
 
-// import Moon from "./components/main/destination/moon/Moon";
-// import Mars from "./components/main/destination/mars/Mars";
-// import Europa from "./components/main/destination/europa/Europa";
-// import Titan from "./components/main/destination/titan/Titan";
-
-// import Commander from "./components/main/crew/commander/commander"
-// import MissionSpecialist from "./components/main/crew/mission-specialist/MissionSpecialist";
-// import FlightEngineer from "./components/main/crew/flight-engineer/FlightEngineer";
-// import Pilot from "./components/main/crew/pilot/Pilot"
-
-// import Launch from "./components/main/technology/launch/launch";
-// import Spaceport from "./components/main/technology/spaceport/spaceport";
-// import Capsule from "./components/main/technology/capsule/capsule";
 
 const ErrorMsg = () => {
   return (
@@ -41,16 +29,25 @@ const ErrorMsg = () => {
 };
 
 const App = () => {
+  const [cart, setCart] = useState([]);
 
+  const addToCart = (product) => {
+      setCart([...cart, product]);
 
+  }
+
+  const removeFromCart = (id) => {
+      setCart(cart.filter(item => item.id !== id));
+  }
+  console.log('App component - addToCart function:', addToCart);
   return (
     <>
     <Routes>
       <Route path="/" element={<Layer />}>
         <Route index element={<Navigate to="home" />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/productList" element={<ProductList />} />
+        <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} />} />
+        <Route path="/components/main/ProductList" element={<ProductList addToCart={addToCart} />} />
         <Route path="/checkout" element={<Checkout />} />
 
         {/* <Route path="/destination/*" element={<Destination />}>
