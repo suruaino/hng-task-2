@@ -89,9 +89,14 @@ header{
     font-size: 1.25rem;
     font-weight: 500;
 }
+.bottom .left img{
+    width: 1.8rem;
+}
+
 .bottom .right{
 
     display: flex;
+    align-items: center;
     gap: 3rem;
 }
 .bottom .right img{

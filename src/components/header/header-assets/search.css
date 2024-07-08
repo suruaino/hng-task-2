@@ -26,7 +26,7 @@
 }
 @media (max-width: 485px) {
     .search-bar{
-        width: 12rem;
+        width: 4rem;
     }
     .search-bar input{
         width: 100%;
@@ -34,6 +34,6 @@
 }
 @media (max-width: 768px) {
     .search-bar{
-        width: 16rem;
+        width: 12rem;
     }
 }
