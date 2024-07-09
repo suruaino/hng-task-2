@@ -1,5 +1,6 @@
 
 import {useState} from 'react';
+import {Link} from 'react-router-dom';
 import './styles.css';
 import CartItem from './CartItem';
 
@@ -34,8 +35,8 @@ const Cart = ({ cart, removeFromCart }) => {
         <span>Total</span> #{total}
       </div>
       <div className="cart-btn-box flex flex-col gap-2 mt-6">
-        <button className="remove-btn">View Cart</button>
-        <button className="checkout">Check Out</button>
+        <Link className="remove-btn" to="/cartmain">View Cart</Link>
+        <Link className="checkout">Check Out</Link>
       </div>
     </section>
   );

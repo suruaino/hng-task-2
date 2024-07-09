@@ -4,6 +4,7 @@ import Cart from "../main/Cart";
 import menu from "./header-assets/menu.png";
 import close from "./header-assets/close.png";
 import logo from "./header-assets/logo.jpg";
+import home from "../main/Home";
 import "./header.css";
 import SearchBar from "./header-assets/SearchBar";
 
@@ -291,11 +292,11 @@ const Header = ({ cart = [], removeFromCart }) => {
                       {cart.length === 0 ? (
                         <>
                           <i>There's nothing in your Wishlist</i>
-                          <button>Back to shop</button>
+                          <Link to="/home">Back to shop</Link>
                         </>
                       ) : (
                         <>
-                          <button>Back to shop</button>
+                          <Link to={home}>Back to shop</Link>
                         </>
                       )}
                     </div>

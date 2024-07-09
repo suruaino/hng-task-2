@@ -4,6 +4,7 @@ import { Route, Routes, Link, Navigate } from "react-router-dom";
 import Layer from "./components/layout/Layout";
 import Home from "./components/main/Home";
 import Cart from "./components/main/Cart";
+import CartMain from "./components/main/CartMain";
 import Checkout from "./components/main/Checkout";
 import ProductList from "./components/main/ProductList";
 
@@ -47,6 +48,7 @@ const App = () => {
           <Route index element={<Navigate to="home" />} />
           <Route path="home" element={<Home addToCart= {addToCart} />} />
           <Route path="cart" element={<Cart cart={cart} removeFromCart= {removeFromCart} />} />
+          <Route path="cartmain" element={<CartMain cart={cart} removeFromCart= {removeFromCart} />} />
           <Route path="products" element={<ProductList addToCart= {addToCart} />} />
           <Route path="checkout" element={<Checkout />} />
         </Route>
