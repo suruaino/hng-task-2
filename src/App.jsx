@@ -43,11 +43,11 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Layer />}>
+        <Route path="/" element={<Layer cart={cart} addToCart={addToCart} removeFromCart= {removeFromCart} />}>
           <Route index element={<Navigate to="home" />} />
-          <Route path="home" element={<Home />} />
-          <Route path="cart" element={<Cart cart={cart} removeFromCart={removeFromCart} />} />
-          <Route path="products" element={<ProductList addToCart={addToCart} />} />
+          <Route path="home" element={<Home addToCart= {addToCart} />} />
+          <Route path="cart" element={<Cart cart={cart} removeFromCart= {removeFromCart} />} />
+          <Route path="products" element={<ProductList addToCart= {addToCart} />} />
           <Route path="checkout" element={<Checkout />} />
         </Route>
         <Route path="*" element={<ErrorMsg />} />

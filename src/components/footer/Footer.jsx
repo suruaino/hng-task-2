@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
 import './footer.css';
+import customerService from "./footer-assets/customer-icon.svg";
+import facebook from "./footer-assets/facebook-icon.svg";
+import gmail from "./footer-assets/gmail-icon.svg";
+import instagram from "./footer-assets/instagram-icon.svg"
+import X from "./footer-assets/x-icon.svg";
 
 
 const Footer = () => {
@@ -37,11 +42,11 @@ const Footer = () => {
                     <div className="sect sect-4">
                         <h4>Contact Us</h4>
                         <ul className="links">
-                            <Link to="/"><img src="" alt="" />Customer Service</Link>
-                            <Link to="/"><img src="" alt="" />X</Link>
-                            <Link to="/"><img src="" alt="" />Instagram</Link>
-                            <Link to="/"><img src="" alt="" />Facebook</Link>
-                            <Link to="/"><img src="" alt="" />Gmail</Link>
+                            <Link to="/"><img src={customerService} alt="" /> Customer Service</Link>
+                            <Link to="/"><img src={X} alt="" />X</Link>
+                            <Link to="/"><img src={instagram} alt="" />Instagram</Link>
+                            <Link to="/"><img src={facebook} alt="" />Facebook</Link>
+                            <Link to="/"><img src={gmail} alt="" />Gmail</Link>
                         </ul>
                     </div>
                 {/* </div> */}

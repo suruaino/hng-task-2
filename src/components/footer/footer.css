@@ -3,15 +3,19 @@
     color: var(--txt-clr-1);
     width: 100%;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+    justify-content: start;
 
     padding-block: 3rem;
 }
 .footer .container{
     max-width: 90%;
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+    /* grid-template-columns: 1fr; */
+    /* justify-items: center; */
+    /* justify-content: start; */
     gap: 2rem;
 
     /* border:  1px solid red; */
@@ -25,13 +29,22 @@
 .footer a,
 .footer p{
     font-size: 18px;
+
+}
+.footer a{
+    transition: .3s;
+}
+* .footer a:hover{
+    color: var(--txt-clr-2);
 }
 .container .sect{
     max-width: 20rem;
-    text-align: center;
+    /* text-align: center; */
+    text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
+
     gap: .5rem;
 
     /* border:  1px solid red; */
@@ -43,21 +56,34 @@
     font-weight: 700;
     padding-block: .6rem;
     border-radius: 20px;
+    transition: background-color .3s;
+}
+.container .sect-2 button:active{
+    transform: scale(1.1);
+}
+.container .sect-2 button:hover{
+    background-color: hsl(from var(--btn-bg-clr) h s calc(90% / 2));
 }
 .container .sect .links{
     display: flex;
     flex-direction: column;
 
 }
+.container .sect .links a{
+    display:  flex;
+    align-items: center;
+    gap:.5rem
+}
 @media (min-width: 600px) {
     .footer .container{
-        max-width: 80%;
-        display: grid;
+        /* max-width: 100%;
+        display: grid; */
+        /* align-content: start; */
         /* grid-template-columns: 1fr 1fr; */
 
      
-        justify-items: center;
-        text-align: left;
+        /* justify-items: center;
+        text-align: left; */
         
         /* border: 1px solid red; */
     }

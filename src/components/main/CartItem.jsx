@@ -1,16 +1,29 @@
 
 
 import React from "react";
+import {useState} from "react";
 import "./styles.css";
 
-const CartItem = ({ item, removeFromCart }) => {
+const CartItem = ({ item, removeFromCart, itemNumber }) => {
+
+
+
   return (
     <div className="cart-item">
-      <div>
-        <h2>{item.name}</h2>
-        <p>${item.price}</p>
+      <div className="main-content">
+        <img src={item.imageUrl} alt="" />
+        <div className="item-content-box">
+          <h2>{item.name}</h2>
+          <span><p>{}</p><p>#{item.price}</p></span>
+        </div>
+
       </div>
-      <button onClick={() => removeFromCart(item.id)}>Remove</button>
+      <div className="total">
+            <span></span>
+            <span></span>
+        </div>
+      <button className="remove-btn" onClick={() => removeFromCart(item.id)}>Remove Item</button>
+
     </div>
   );
 };
