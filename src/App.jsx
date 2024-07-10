@@ -29,6 +29,12 @@ const ErrorMsg = () => {
 
 const App = () => {
   const [cart, setCart] = useState([]);
+  const [showCart, setShowCart] = useState(false);
+
+  const cartToggle = () => {
+    setShowCart((prev) => !prev);
+  
+  };
 
   const addToCart = (product) => {
     console.log("Adding to cart:", product);
@@ -47,8 +53,8 @@ const App = () => {
         <Route path="/" element={<Layer cart={cart} addToCart={addToCart} removeFromCart= {removeFromCart} />}>
           <Route index element={<Navigate to="home" />} />
           <Route path="home" element={<Home addToCart= {addToCart} />} />
-          <Route path="cart" element={<Cart cart={cart} removeFromCart= {removeFromCart} />} />
-          <Route path="cartmain" element={<CartMain cart={cart} removeFromCart= {removeFromCart} />} />
+          <Route path="cart" element={<Cart cart={cart} cartToggle={cartToggle} showCart={showCart} removeFromCart= {removeFromCart} />} />
+          <Route path="cartmain" element={<CartMain cartMain={cart}  removeFromCart= {removeFromCart} />} />
           <Route path="products" element={<ProductList addToCart= {addToCart} />} />
           <Route path="checkout" element={<Checkout />} />
         </Route>

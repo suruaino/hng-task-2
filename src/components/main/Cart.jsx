@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import './styles.css';
 import CartItem from './CartItem';
 
-const Cart = ({ cart, removeFromCart }) => {
+const Cart = ({ cart, cartToggle, removeFromCart }) => {
 
     const total = cart.reduce((sum, item) => parseFloat(sum + item.price) ,0);
     const [count, setCount] = useState(0);
@@ -35,7 +35,8 @@ const Cart = ({ cart, removeFromCart }) => {
         <span>Total</span> #{total}
       </div>
       <div className="cart-btn-box flex flex-col gap-2 mt-6">
-        <Link className="remove-btn" to="/cartmain">View Cart</Link>
+        {<Link className="remove-btn" to="/cartmain">View Cart</Link> &&   cartToggle(false)}
+        {/* <Link className="remove-btn" to="/cartmain">View Cart</Link> */}
         <Link className="checkout">Check Out</Link>
       </div>
     </section>

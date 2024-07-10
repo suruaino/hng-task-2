@@ -12,9 +12,9 @@ import bag from "./header-assets/bag-icon.svg";
 import cartIcon from "./header-assets/cart-icon.svg";
 import categ from "./header-assets/categ-icon.svg";
 
-const Header = ({ cart = [], removeFromCart }) => {
+const Header = ({ cart = [], cartToggle, showCart, removeFromCart }) => {
   const [showNav, setShowNav] = useState(false);
-  const [showCart, setShowCart] = useState(false);
+  // const [showCart, setShowCart] = useState(false);
   const [showCateg, setShowCateg] = useState(false);
   const [showWishlist, setShowWishlist] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 485);
@@ -24,9 +24,10 @@ const Header = ({ cart = [], removeFromCart }) => {
     setShowNav((prev) => !prev);
   };
 
-  const cartToggle = () => {
-    setShowCart((prev) => !prev);
-  };
+  // const cartToggle = () => {
+  //   setShowCart((prev) => !prev);
+  
+  // };
 
   const categToggle = () => {
     setShowCateg((prev) => !prev);
