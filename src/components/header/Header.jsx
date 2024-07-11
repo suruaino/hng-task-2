@@ -318,7 +318,7 @@ const Header = ({ cart = [], removeFromCart, closeCartOverlay }) => {
                       cart={cart}
                       removeFromCart={removeFromCart}
                       closeCartOverlay={closeCartOverlay}
-                      // cartToggle={cartToggle} 
+                      cartToggle={cartToggle} 
                       // showCart={showCart}
                     />
                   )}

@@ -26,7 +26,7 @@ const Cart = ({ cart, cartToggle, removeFromCart, closeCartOverlay }) => {
       <div className="cart-btn-box flex flex-col gap-2 mt-6">
         {/* {<Link className="remove-btn" to="/cartmain">View Cart</Link> &&   setShowCart(true)} */}
         <Link className="remove-btn" to="/cartmain" onClick={cartToggle}>View Cart</Link>
-        <Link className="checkout">Check Out</Link>
+        <Link to="/checkout" onClick={cartToggle} className="checkout">Check Out</Link>
       </div>
     </section>
   );

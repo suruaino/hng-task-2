@@ -66,7 +66,7 @@ const CartMain = ({ cartMain, removeFromCart }) => {
             </div>
 
             <div className="cart-nav-btn-box">
-              <Link>Back toshop</Link>
+              <Link to="/home">Back To Shop</Link>
               <Link>Update Cart</Link>
             </div>
           </div>
@@ -94,7 +94,7 @@ const CartMain = ({ cartMain, removeFromCart }) => {
           <div className="cart-calc-btn-box">
             <Link>Coupon Code</Link>
             <Link>Apply Coupon</Link>
-            <Link>Proceed To Check Out</Link>
+            <Link to="/checkout">Proceed To Check Out</Link>
           </div>
         </div>
       ) : (
@@ -130,7 +130,7 @@ const CartMain = ({ cartMain, removeFromCart }) => {
             <div className="cart-nav-btn-box">
               <Link to="/home">
                 <i className="fa fa-arrow-left" aria-hidden="true"></i> Back
-                toshop
+                To Shop
               </Link>
               <Link>Update Cart</Link>
             </div>
@@ -143,7 +143,8 @@ const CartMain = ({ cartMain, removeFromCart }) => {
             <div className="calculations">
               <div className="sub-total">
                 <span>Subtotal</span>
-                <span>{subTotal}</span>
+                <span>#{subTotal}</span>
+                {/* <span>{quantity * item.price}</span> */}
               </div>
 
               <div className="calculate">
@@ -155,11 +156,11 @@ const CartMain = ({ cartMain, removeFromCart }) => {
                 <span>{/*total*/}</span>
               </div>
             </div>
-            
+
             <div className="cart-calc-btn-box">
             <Link>Coupon Code</Link>
             <Link>Apply Coupon</Link>
-            <Link>Proceed To Check Out</Link>
+            <Link to="/checkout">Proceed To Check Out</Link>
           </div>
           </div>
 
