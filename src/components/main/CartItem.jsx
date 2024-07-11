@@ -10,6 +10,7 @@ const CartItem = ({ item, removeFromCart, itemNumber }) => {
 
   return (
     <div className="cart-item">
+      
       <div className="main-content">
         <img src={item.imageUrl} alt="" />
         <div className="item-content-box">
@@ -21,8 +22,8 @@ const CartItem = ({ item, removeFromCart, itemNumber }) => {
       <div className="total">
             <span></span>
             <span></span>
-        </div>
-      <button className="remove-btn" onClick={() => removeFromCart(item.id)}>Remove Item</button>
+      </div>
+      <button className="remove-btn" onClick={() => removeFromCart(item.id)}><i className="fa-solid fa-xmark"></i></button>
 
     </div>
   );

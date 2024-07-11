@@ -51,9 +51,6 @@
     padding-inline: 5%;
     padding-block: 2rem;
 
-  
-
-
 }
 .products-box .navigation{
     width: 100%;
@@ -112,7 +109,7 @@
 .product .product__price{
     font-weight: 500;
 }
-.product button{
+.product > button{
     width: 100%;
     max-width: 95%;
     background-color: var(--btn-bg-clr);
@@ -144,9 +141,10 @@
     position: absolute;
     right: 4%;
     top: 3rem;
+    /* top: -10rem; */
 }
 .cart-items h2{
-    text-align: center;
+    /* text-align: center; */
     font-size: 1.25rem;
     font-weight: 600;
     /* margin-bottom: 2rem; */
@@ -155,17 +153,50 @@
     width: 2.5rem;
     height: 2.5rem;
 }
+.cart-items .cart-item{
+    position: relative;
+}
+.cart-items .cart-item > .remove-btn{
+    background-color: transparent;
+    width: 1.5rem;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    border: 1px solid gray;
+    
+}
+.cart-items .cart-item > button i{
+    /* background-clor: red; */
+    
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 .main-content{
     width: 100%;
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    /* border: 2px solid red; */
+}
+.main-content .item-content-box{
+    /* display: flex; */
+    /* flex-direction: column; */
+    gap: 0;
 }
 .main-content h2{
+    width: 100%;
     font-size: .8rem;
     font-weight: 500;
     color: var(--txt-clr-3);
+    /* border: 2px solid red; */
 }
+
 
 @media (max-width: 600px) {
     .products{

@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
 
-const Layout = ({cart, addToCart, removeFromCart}) => {
+const Layout = ({cart, cartToggle, addToCart, removeFromCart, showCartOverlay, closeCartOverlay}) => {
   // const [cart, setCart] = useState([]);
 
   // const addToCart = (product) => {
@@ -14,9 +14,9 @@ const Layout = ({cart, addToCart, removeFromCart}) => {
   // };
   return (
     <div>
-      <Header cart ={cart} removeFromCart={removeFromCart} />
+      <Header cart ={cart} cartToggle={cartToggle} removeFromCart={removeFromCart} showCartOverlay={showCartOverlay} closeCartOverlay={closeCartOverlay} />
       <main>
-        <Outlet addToCart={addToCart} removeFromCart= {removeFromCart} />
+        <Outlet addToCart={addToCart} removeFromCart= {removeFromCart} closeCartOverlay={closeCartOverlay}  />
       </main>
       <Footer />
     </div>

@@ -21,12 +21,14 @@ const CartMainItem = ({ item, removeFromCart, handleNegativeClick, handlePositiv
   return (
     <div className="cart-main-item">
       <div className="cart-main-content">
+        <div className="book-details">
         <img src={item.imageUrl} alt="" />
-
+        <h2>{item.name}</h2>
+        </div>
         <div className="item-content-box">
-          <h2>{item.name}</h2>
+          {/* <h2 className="border">{item.name}</h2> */}
 
-          <span><p>{}</p><p>#{item.price}</p></span>
+          <span className="unit-price">#{item.price}</span>
 
           <div className="quantity-btn-box">
             <button onClick={handleNegativeClick}>-</button>
@@ -42,7 +44,7 @@ const CartMainItem = ({ item, removeFromCart, handleNegativeClick, handlePositiv
 
       </div>
 
-      <button className="remove-btn" onClick={() => removeFromCart(item.id)}>Remove Item</button>
+      <button className="remove-btn" onClick={() => removeFromCart(item.id)}><i className="fa-solid fa-xmark"></i></button>
 
     </div>
   );

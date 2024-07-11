@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import Cart from "../main/Cart";
 import menu from "./header-assets/menu.png";
 import close from "./header-assets/close.png";
@@ -12,22 +12,24 @@ import bag from "./header-assets/bag-icon.svg";
 import cartIcon from "./header-assets/cart-icon.svg";
 import categ from "./header-assets/categ-icon.svg";
 
-const Header = ({ cart = [], cartToggle, showCart, removeFromCart }) => {
+const Header = ({ cart = [], removeFromCart, closeCartOverlay }) => {
   const [showNav, setShowNav] = useState(false);
-  // const [showCart, setShowCart] = useState(false);
+  const [showCart, setShowCart] = useState(false);
   const [showCateg, setShowCateg] = useState(false);
   const [showWishlist, setShowWishlist] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 485);
-  const location = useLocation();
+  // const location = useLocation();
+  // const navigate = useNavigate();
 
   const menuToggle = () => {
     setShowNav((prev) => !prev);
   };
 
-  // const cartToggle = () => {
-  //   setShowCart((prev) => !prev);
+  const cartToggle = () => {
+    setShowCart((prev) => !prev);
+    // console.log("clicked");
   
-  // };
+  };
 
   const categToggle = () => {
     setShowCateg((prev) => !prev);
@@ -64,7 +66,7 @@ const Header = ({ cart = [], cartToggle, showCart, removeFromCart }) => {
   // };
 
   return (
-    <header>
+    <header className="main-header">
       {isMobile ? (
         <>
           <div className="top">
@@ -185,6 +187,8 @@ const Header = ({ cart = [], cartToggle, showCart, removeFromCart }) => {
                       className="test-cart"
                       cart={cart}
                       removeFromCart={removeFromCart}
+                      closeCartOverlay={closeCartOverlay}
+                      cartToggle={cartToggle}
                     />
                   )}
                 </div>
@@ -313,6 +317,9 @@ const Header = ({ cart = [], cartToggle, showCart, removeFromCart }) => {
                       className="test-cart"
                       cart={cart}
                       removeFromCart={removeFromCart}
+                      closeCartOverlay={closeCartOverlay}
+                      // cartToggle={cartToggle} 
+                      // showCart={showCart}
                     />
                   )}
                 </div>
