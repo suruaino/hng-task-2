@@ -1,7 +1,10 @@
 import React from 'react';
 
 const Product = ({ product, addToCart }) => {
-//   console.log("Product addToCart:", addToCart);
+  const organizationId ="27f6387b9d7b4f4d823cf6c910de5825";
+  const appId = 'AJ5T733PD8P1NHF';
+  const apiKey = '2f8b45bc903246de81dfb434c5f3e4ed20240713011223927260';
+  const url = `https://api.example.com/products/${productId}`;
 
   return (
     <div className="product">

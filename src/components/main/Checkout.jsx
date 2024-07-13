@@ -19,7 +19,7 @@ const Checkout = () => {
                 Are you a returning customer? <Link to="/login">Login</Link>
               </p>
             </div>
-            <div className="checkout__bottom mt-4 flex flex-col items-center md:flex-row">
+            <div className="checkout__bottom mt-4 flex flex-col gap-8 md:gap-0 items-center md:flex-row">
               <form className="bottom__left flex flex-col items-start">
                 <h3 className="font-semibold mb-5">Billing Details</h3>
                 {/* <div className="bottom__form-input-box flex flex-col gap-2"> */}
@@ -72,7 +72,7 @@ const Checkout = () => {
                 </div>
               </form>
 
-              <div className="bottom__right order flex flex-col gap-2">
+              <div className="bottom__right order  pt-2 md:px-2 md:mr-12 flex flex-col gap-2">
                 <h3 className="order__header font-semibold">Your Order</h3>
                 <div className="order__subheader font-semibold flex justify-between">
                   <span>Product</span>
