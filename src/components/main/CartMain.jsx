@@ -7,10 +7,14 @@ import CartMainItem from "./CartMainItem";
 const CartMain = ({ cartMain, removeFromCart }) => {
   const [quantity, setQuantity] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 485);
-  const subTotal = cartMain.reduce(
-    (sum, item) => parseFloat(sum + item.price),
-    0
-  );
+  // const subTotal = cartMain.reduce(
+  //   (sum, item) => parseFloat(sum + item.price),
+  //   0
+  // );
+  const subTotal = cartMain.reduce((sum, item) => {
+    const price = parseFloat(item?.current_price[0]?.NGN[0]) || 0;
+    return sum + price;
+  }, 0);
 
   useEffect(() => {
     const handleResize = () => {

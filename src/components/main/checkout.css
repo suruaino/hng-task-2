@@ -117,6 +117,7 @@
 .bottom__form-input-box :has(input[type="checkbox"]) input{
     width: auto;
     opacity: 0;
+    cursor: pointer;
     z-index: 1;
 }
 .bottom__form-input-box :has(input[type="checkbox"]) input:checked{

@@ -14,7 +14,7 @@ const Layout = ({cart, cartToggle, addToCart, removeFromCart, showCartOverlay, c
   // };
   return (
     <div>
-      <Header cart ={cart} cartToggle={cartToggle} removeFromCart={removeFromCart} showCartOverlay={showCartOverlay} closeCartOverlay={closeCartOverlay} />
+      <Header cart={cart} cartToggle={cartToggle} removeFromCart={removeFromCart} showCartOverlay={showCartOverlay} closeCartOverlay={closeCartOverlay} />
       <main>
         <Outlet addToCart={addToCart} removeFromCart= {removeFromCart} closeCartOverlay={closeCartOverlay}  />
       </main>

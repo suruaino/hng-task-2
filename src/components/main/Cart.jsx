@@ -4,9 +4,13 @@ import {Link} from 'react-router-dom';
 import './styles.css';
 import CartItem from './CartItem';
 
-const Cart = ({ cart, cartToggle, removeFromCart, closeCartOverlay }) => {
+const Cart = ({ cart = [], cartToggle, removeFromCart, closeCartOverlay }) => {
 
-    const total = cart.reduce((sum, item) => parseFloat(sum + item.price) ,0);
+    // const total = cart.reduce((sum, item) => parseFloat(sum + item.price) ,0);
+    const total = cart.reduce((sum, item) => {
+      const price = parseFloat(item?.current_price[0]?.NGN[0]) || 0;
+      return sum + price;
+    }, 0);
 
   return (
     <section id="cart-items" className="cart-items">
@@ -14,8 +18,9 @@ const Cart = ({ cart, cartToggle, removeFromCart, closeCartOverlay }) => {
 
       {cart.length === 0 ? (
         <p>Your cart is empty</p>
-      ) : (
+      ) :(
         cart.map((item) => (
+          
           <CartItem key={item.id} item={item} removeFromCart={removeFromCart}  />
         ))
       )}
@@ -24,7 +29,6 @@ const Cart = ({ cart, cartToggle, removeFromCart, closeCartOverlay }) => {
         <span>Total</span> #{total}
       </div>
       <div className="cart-btn-box flex flex-col gap-2 mt-6">
-        {/* {<Link className="remove-btn" to="/cartmain">View Cart</Link> &&   setShowCart(true)} */}
         <Link className="remove-btn" to="/cartmain" onClick={cartToggle}>View Cart</Link>
         <Link to="/checkout" onClick={cartToggle} className="checkout">Check Out</Link>
       </div>

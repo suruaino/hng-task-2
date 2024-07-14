@@ -12,7 +12,7 @@ import bag from "./header-assets/bag-icon.svg";
 import cartIcon from "./header-assets/cart-icon.svg";
 import categ from "./header-assets/categ-icon.svg";
 
-const Header = ({ cart = [], removeFromCart, closeCartOverlay }) => {
+const Header = ({ cart, removeFromCart, closeCartOverlay }) => {
   const [showNav, setShowNav] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const [showCateg, setShowCateg] = useState(false);
@@ -168,7 +168,7 @@ const Header = ({ cart = [], removeFromCart, closeCartOverlay }) => {
                       {cart.length === 0 ? (
                         <>
                           <i>There's nothing in your Wishlist</i>
-                          <button>Back to shop</button>
+                          <Link to="/home" onClick={wishToggle}>Back to shop</Link>
                         </>
                       ) : (
                         <>
@@ -297,7 +297,7 @@ const Header = ({ cart = [], removeFromCart, closeCartOverlay }) => {
                       {cart.length === 0 ? (
                         <>
                           <i>There's nothing in your Wishlist</i>
-                          <Link to="/home">Back to shop</Link>
+                          <Link to="/home" onClick={wishToggle}>Back to shop</Link>
                         </>
                       ) : (
                         <>

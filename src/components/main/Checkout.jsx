@@ -130,7 +130,7 @@ const Checkout = () => {
 
                     <div className="flutterwave">
                       <div className="flutterwave__input-box flex gap-2">
-                        <input type="radio" name="payment-type" onClick={console.log("Flutter is clicked")}/>
+                        <input type="radio" name="payment-type" />
                         <span className="radio-custom-btn"></span>
                         
                         <label htmlFor="" className="font-semibold">
