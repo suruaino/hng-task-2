@@ -113,8 +113,9 @@ const Checkout = () => {
                   <section className="payment-type flex flex-col gap-2 my-4">
                     <div className="paystack">
                       <div className="paystack__input-box flex gap-2">
-                        <span className="radio-custom-btn"></span>
                         <input type="radio" name="payment-type" />
+                        <span className="radio-custom-btn"></span>
+                        
                         <label htmlFor="" className="font-semibold">
                           Paystack
                         </label>
@@ -129,8 +130,9 @@ const Checkout = () => {
 
                     <div className="flutterwave">
                       <div className="flutterwave__input-box flex gap-2">
+                        <input type="radio" name="payment-type" onClick={console.log("Flutter is clicked")}/>
                         <span className="radio-custom-btn"></span>
-                        <input type="radio" name="payment-type" />
+                        
                         <label htmlFor="" className="font-semibold">
                           Flutterwave
                         </label>
