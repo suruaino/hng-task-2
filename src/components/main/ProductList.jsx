@@ -98,7 +98,7 @@ const fetchProducts = async ({ organization_id, reverse_sort, page, size, Appid,
               organization_id: '27f6387b9d7b4f4d823cf6c910de5825',
               reverse_sort: 'false',
               page: page,
-              size: 6,
+              size: 10,
               Appid: 'AJ5T733PD8P1NHF',
               Apikey: '2f8b45bc903246de81dfb434c5f3e4ed20240713011223927260'
           };
