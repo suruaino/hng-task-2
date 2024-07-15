@@ -1,16 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-// import "./styles.css";
 import "./cartmainitem.css";
 import CartMainItem from "./CartMainItem";
 
 const CartMain = ({ cartMain, removeFromCart }) => {
-  const [quantity, setQuantity] = useState(0);
+  const [quantities, setQuantities] = useState({});
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 485);
-  // const subTotal = cartMain.reduce(
-  //   (sum, item) => parseFloat(sum + item.price),
-  //   0
-  // );
+
   const subTotal = cartMain.reduce((sum, item) => {
     const price = parseFloat(item?.current_price[0]?.NGN[0]) || 0;
     return sum + price;
@@ -27,13 +23,26 @@ const CartMain = ({ cartMain, removeFromCart }) => {
     };
   }, []);
 
-  const handlePositiveClick = () => {
-    setQuantity(quantity + 1);
-    console.log(quantity);
+  // const handlePositiveClick = () => {
+  //   setQuantity(quantity + 1);
+  //   console.log(quantity);
+  // };
+
+  const handlePositiveClick = (id) => {
+    setQuantities((prevQuantities) => ({
+      ...prevQuantities,
+      [id]: (prevQuantities[id] || 1) + 1,
+    }));
   };
-  const handleNegativeClick = () => {
-    setQuantity(quantity - 1);
-    console.log(quantity);
+  // const handleNegativeClick = () => {
+  //   setQuantity(quantity - 1);
+  //   console.log(quantity);
+  // };
+  const handleNegativeClick = (id) => {
+    setQuantities((prevQuantities) => ({
+      ...prevQuantities,
+      [id]: Math.max((prevQuantities[id] || 1) - 1, 1),
+    }));
   };
 
   return (
@@ -60,9 +69,12 @@ const CartMain = ({ cartMain, removeFromCart }) => {
                     key={item.id}
                     item={item}
                     removeFromCart={removeFromCart}
-                    handleNegativeClick={handleNegativeClick}
-                    handlePositiveClick={handlePositiveClick}
-                    quantity={quantity}
+                    // handleNegativeClick={handleNegativeClick}
+                    // handlePositiveClick={handlePositiveClick}
+                    handleNegativeClick={() => handleNegativeClick(item.id)}
+                    handlePositiveClick={() => handlePositiveClick(item.id)}
+                    quantity={quantities[item.id] || 1}
+                    // quantity={quantities}
                     subTotal={subTotal}
                   />
                 ))
@@ -122,9 +134,12 @@ const CartMain = ({ cartMain, removeFromCart }) => {
                     key={item.id}
                     item={item}
                     removeFromCart={removeFromCart}
-                    handleNegativeClick={handleNegativeClick}
-                    handlePositiveClick={handlePositiveClick}
-                    quantity={quantity}
+                    // handleNegativeClick={handleNegativeClick}
+                    // handlePositiveClick={handlePositiveClick}
+                    // quantity={quantities}
+                    handleNegativeClick={() => handleNegativeClick(item.id)}
+                    handlePositiveClick={() => handlePositiveClick(item.id)}
+                    quantity={quantities[item.id] || 1}
                     subTotal={subTotal}
                   />
                 ))
