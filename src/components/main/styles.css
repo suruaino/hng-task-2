@@ -84,14 +84,23 @@
     border-radius: 20px 20px 10px 10px;
 
     box-shadow: 0 0 4px;
+    transition: all .5s;
+    cursor: pointer;
 
 }
+
 .product img{
     height: 360px;
     min-width: 100%;
     object-fit: cover;
     border-radius: 20px;
+    transition: all .5s;
 }
+.product:hover{
+    scale: .9;
+    box-shadow: 0 0 16px;
+}
+
 .product .content{
     display: flex;
     flex-direction: column;
